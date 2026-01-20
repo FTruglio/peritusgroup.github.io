@@ -289,6 +289,112 @@
             color: var(--text-muted);
         }
 
+        /* Methodology Section */
+        .methodology-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 80px;
+        }
+
+        .methodology-intro p {
+            margin-bottom: 24px;
+        }
+
+        .framework-visual {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .framework-step {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 24px;
+            padding: 24px;
+            background: var(--bg-secondary);
+            border-left: 2px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .framework-step:hover {
+            border-left-color: var(--accent);
+            background: var(--bg-tertiary);
+        }
+
+        .framework-step-name {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-primary);
+            letter-spacing: 1px;
+        }
+
+        .framework-step-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .methodology-principles {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--border);
+            margin-top: 60px;
+        }
+
+        .principle-card {
+            background: var(--bg-primary);
+            padding: 48px 32px;
+        }
+
+        .principle-number {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 11px;
+            color: var(--accent);
+            margin-bottom: 24px;
+            letter-spacing: 2px;
+        }
+
+        .principle-card h3 {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .principle-card p {
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* Quote Block */
+        .quote-block {
+            margin: 80px 0;
+            padding: 60px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .quote-text {
+            font-size: clamp(24px, 3vw, 32px);
+            font-weight: 300;
+            color: var(--text-primary);
+            line-height: 1.5;
+            max-width: 900px;
+            font-style: italic;
+        }
+
+        .quote-text::before {
+            content: '"';
+            color: var(--accent);
+        }
+
+        .quote-text::after {
+            content: '"';
+            color: var(--accent);
+        }
+
         /* Services Section */
         .services-grid {
             display: grid;
@@ -495,12 +601,14 @@
             .about-content,
             .expertise-content,
             .principal-content,
-            .contact-content {
+            .contact-content,
+            .methodology-intro {
                 grid-template-columns: 1fr;
                 gap: 60px;
             }
 
-            .services-grid {
+            .services-grid,
+            .methodology-principles {
                 grid-template-columns: 1fr;
             }
 
@@ -534,7 +642,8 @@
                 grid-template-columns: 1fr;
             }
 
-            .service-card {
+            .service-card,
+            .principle-card {
                 padding: 32px 24px;
             }
 
@@ -547,6 +656,11 @@
                 gap: 16px;
                 text-align: center;
             }
+
+            .framework-step {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
         }
     </style>
 </head>
@@ -555,8 +669,8 @@
         <div class="logo">Peritus</div>
         <div class="nav-links">
             <a href="#about">About</a>
+            <a href="#methodology">Methodology</a>
             <a href="#services">Services</a>
-            <a href="#expertise">Expertise</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
@@ -566,8 +680,8 @@
             <span class="hero-label">Technology Consulting</span>
             <h1>The Peritus Group</h1>
             <p class="hero-subtitle">
-                Expert software architecture and strategic technology consulting 
-                for companies building mission-critical enterprise platforms.
+                Expert software architecture and outcome-based operational 
+                consulting for companies building mission-critical platforms.
             </p>
         </div>
         <div class="scroll-indicator">
@@ -617,10 +731,85 @@
         </div>
     </section>
 
+    <section id="methodology">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">02 — Methodology</span>
+                <h2>Outcome-based operations</h2>
+            </div>
+            <div class="methodology-intro">
+                <div class="methodology-text">
+                    <p>
+                        We believe operations should be measured by results, not activities. Our 
+                        methodology transforms traditional cost-center operations into profit engines 
+                        through structured data, measurable outcomes, and continuous benchmarking.
+                    </p>
+                    <p>
+                        This approach creates accountability loops that align teams around the same 
+                        measurable goals—turning reliability from a cost center into a competitive 
+                        advantage.
+                    </p>
+                </div>
+                <div class="framework-visual">
+                    <div class="framework-step">
+                        <div class="framework-step-name">Schemas</div>
+                        <div class="framework-step-desc">Define structured data that captures every aspect of operations</div>
+                    </div>
+                    <div class="framework-step">
+                        <div class="framework-step-name">Actions</div>
+                        <div class="framework-step-desc">Execute decisions—logged, timestamped, attributed, reversible</div>
+                    </div>
+                    <div class="framework-step">
+                        <div class="framework-step-name">Outcomes</div>
+                        <div class="framework-step-desc">Measure guaranteed behaviors—uptime, resolution time, install speed</div>
+                    </div>
+                    <div class="framework-step">
+                        <div class="framework-step-name">Benchmarks</div>
+                        <div class="framework-step-desc">Compare and rate performance against industry standards</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quote-block">
+                <p class="quote-text">
+                    Outcomes are the atomic unit of value in operational systems. You can't improve 
+                    what you don't measure, and you can't guarantee what you can't track.
+                </p>
+            </div>
+
+            <div class="methodology-principles">
+                <div class="principle-card">
+                    <div class="principle-number">PRINCIPLE 01</div>
+                    <h3>Measure Results, Not Activity</h3>
+                    <p>
+                        Traditional metrics track what happened. Outcome-based operations track 
+                        whether it worked—and create financial consequences for failure.
+                    </p>
+                </div>
+                <div class="principle-card">
+                    <div class="principle-number">PRINCIPLE 02</div>
+                    <h3>Structured Data Enables AI</h3>
+                    <p>
+                        AI operates on the framework—it doesn't replace it. Schemas provide context, 
+                        actions provide tools, outcomes provide goals.
+                    </p>
+                </div>
+                <div class="principle-card">
+                    <div class="principle-number">PRINCIPLE 03</div>
+                    <h3>Operations as Profit Engine</h3>
+                    <p>
+                        Better ops → fewer failures → higher margins → reinvestment → compounding 
+                        advantage. Real-time visibility turns costs into ROI decisions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="services">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">02 — Services</span>
+                <span class="section-label">03 — Services</span>
                 <h2>Comprehensive technology solutions for enterprise challenges</h2>
             </div>
         </div>
@@ -657,7 +846,7 @@
     <section id="expertise">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">03 — Expertise</span>
+                <span class="section-label">04 — Expertise</span>
                 <h2>Core technical competencies</h2>
             </div>
             <div class="expertise-content">
@@ -683,7 +872,7 @@
     <section id="principal">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">04 — Leadership</span>
+                <span class="section-label">05 — Leadership</span>
                 <h2>Principal</h2>
             </div>
             <div class="principal-content">
@@ -711,7 +900,7 @@
     <section id="contact" class="contact-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">05 — Contact</span>
+                <span class="section-label">06 — Contact</span>
                 <h2>Let's discuss your project</h2>
             </div>
             <div class="contact-content">
